@@ -7,21 +7,23 @@ body {
   font-size: 17px;
 }
 
+/* BASE MOBILE LAYOUT (Default: 1 column) */
 .grid-container {
   display: grid;
+  /* Defining the area structure for Mobile/Small Screens */
   grid-template-areas:
     'header'
     'menu'
     'main'
     'facts'
     'footer';
-  background-color:gray;
-  gap: 10px;  
+  background-color: white;
+  gap: 10px;    
 }
 
 .header {
   grid-area: header;
-  background-color: yellow;
+  background-color: purple;
   text-align: center;
   color: #ffffff;
 }
@@ -32,8 +34,8 @@ body {
 
 .menu {
   grid-area: menu;
-  }
-  
+}
+    
 .menu ul {
   list-style-type: none;
   margin: 0;
@@ -43,16 +45,17 @@ body {
 .menu li {
   padding: 8px;
   margin-bottom: 7px;
-  background-color: #1d2adb;
+  background-color: #33b5e5;
   color: #ffffff;
 }
 
 .menu li:hover {
-  background-color: #1d2adb;
+  background-color: #0099cc;
 }
-  
+    
 .content {
-  grid-area: main;
+  /* Note: Your HTML class is 'content', but your grid-area name is 'main' */
+  grid-area: main; 
 }
 
 .content > h1 {
@@ -86,18 +89,30 @@ body {
   text-align: center;
 }
 
+/* 600px+ LAYOUT (Tablet) - Assuming a 5 or 6 column setup */
 @media (min-width: 600px) {
-  .header {grid-area: 1 / span 6;}
-  .menu {grid-area: 2 / span 1;}
-  .content {grid-area: 2 / span 4;}
-  .facts {grid-area: 3 / span 6;}
-  .footer {grid-area: 4 / span 6;}
+  /* Define the column structure (e.g., 5 equal columns) */
+  .grid-container {
+    grid-template-columns: repeat(5, 1fr); 
+    grid-template-areas:
+      "header header header header header" /* 5 columns wide */
+      "menu main main main main"          /* menu is 1, main is 4 */
+      "facts facts facts facts facts"     /* facts is 5 wide */
+      "footer footer footer footer footer"; /* footer is 5 wide */
+  }
 }
 
+/* 768px+ LAYOUT (Desktop) - This matches the desired result of menu/content/facts side-by-side */
 @media (min-width: 768px) {
-  .header {grid-area: 1 / span 6;}
-  .menu {grid-area: 2 / span 1;}
-  .content {grid-area: 2 / span 4;}
-  .facts {grid-area: 2 / span 1;}
-  .footer {grid-area: 3 / span 6;}
+  /* Define the column structure (e.g., 6 equal columns) */
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr); 
+    grid-template-areas:
+      "header header header header header header" /* 6 columns wide */
+      "menu main main main facts facts"           /* 1 + 3 + 2 = 6 columns. Adjust as needed. */
+      "footer footer footer footer footer footer"; /* 6 columns wide */
+  }
+
+  /* The grid-area properties for the children remain the same, 
+     but now they fit into the new template */
 }
