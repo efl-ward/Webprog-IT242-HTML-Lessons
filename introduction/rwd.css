@@ -1,4 +1,3 @@
-/* General Layout */
 body, h1, h3 {
     font-family: "Raleway", sans-serif;
 }
@@ -8,22 +7,33 @@ body, html {
     margin: 0;
 }
 
-/* Background Image styling */
 .bgimg {
+    /* Use a fallback color if image fails to load */
+    background-color: #222; 
     background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
     min-height: 100%;
     background-position: center;
     background-size: cover;
 }
 
-/* Logo styling */
 .logo {
-    width: 100px; /* Adjusted from 10% for better control */
+    width: 120px; /* Fixed width */
+    height: auto;
+    display: block;
 }
 
-/* Optional: Adding a slight background to the text for better readability */
-.profile-content {
-    background: rgba(0, 0, 0, 0.4); 
-    padding: 20px;
-    border-radius: 8px;
+/* Enhanced readability for the profile box */
+.profile-card {
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 320px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.profile-details p {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: left; /* Aligns text for a cleaner look */
 }
