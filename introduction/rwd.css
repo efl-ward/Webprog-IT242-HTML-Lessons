@@ -3,44 +3,74 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: "Raleway", sans-serif;
+    background-color: #000;
 }
 
-/* Background Image */
+/* Background Image with Dark Overlay */
 .bgimg {
-    background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.w3schools.com/w3images/forestbridge.jpg');
     min-height: 100%;
     background-position: center;
     background-size: cover;
 }
 
-/* FIX FOR THE LOGO: This prevents the giant image issue */
+/* LOGO FIX: This keeps it small like your target image */
 .logo {
-    width: 150px; /* Limits the size of the logo */
+    width: 80px; /* Adjust this to match your desired size */
     height: auto;
-    display: block;
+    filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
 }
 
 /* Profile Card Styling */
 .profile-card {
-    background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent box */
-    padding: 20px;
-    max-width: 450px; /* Keeps the card from getting too wide on desktop */
+    background: rgba(0, 0, 0, 0.85); /* Dark background like your image */
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
-.profile-content p {
-    text-align: left; /* Makes information easier to read */
-    margin: 10px 0;
+.green-line {
+    border: 0;
+    height: 2px;
+    background: #4CAF50; /* Green accent from your target image */
+    width: 80%;
+    margin: 0 auto 30px auto;
 }
 
-/* RESPONSIVE DESIGN: Changes for mobile phones */
-@media only screen and (max-width: 600px) {
-    .logo {
-        width: 100px; /* Smaller logo on small screens */
-    }
+/* Grid for the Label/Value alignment */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    text-align: left;
+    gap: 20px;
+    font-size: 17px;
+}
+
+.label {
+    color: #4CAF50; /* Green text for labels */
+    font-weight: bold;
+}
+
+.value {
+    color: #fff;
+}
+
+/* --- RESPONSIVE WEB DESIGN (RWD) --- */
+@media screen and (max-width: 600px) {
     .profile-card {
-        width: 90%; /* Card fills more screen on mobile */
+        width: 95%;
+        padding: 20px;
     }
-    h2 {
-        font-size: 20px;
+    
+    .profile-grid {
+        grid-template-columns: 1fr; /* Stack labels on top of values on mobile */
+        gap: 5px;
+        font-size: 15px;
+    }
+
+    .logo {
+        width: 60px;
     }
 }
