@@ -1,39 +1,51 @@
-body, h1, h3 {
-    font-family: "Raleway", sans-serif;
-}
-
+/* General Layout */
 body, html {
     height: 100%;
     margin: 0;
+    font-family: "Raleway", sans-serif;
 }
 
+/* Background Image styling */
 .bgimg {
-    /* Use a fallback color if image fails to load */
-    background-color: #222; 
     background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
     min-height: 100%;
     background-position: center;
     background-size: cover;
 }
 
+/* Logo Styling */
 .logo {
-    width: 120px; /* Fixed width */
+    width: 120px; /* Standard size for desktop */
     height: auto;
-    display: block;
 }
 
-/* Enhanced readability for the profile box */
+/* Profile Card Custom Styling */
 .profile-card {
-    background: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    min-width: 320px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.7); /* Translucent black for readability */
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
 }
 
 .profile-details p {
-    margin: 10px 0;
-    font-size: 18px;
-    text-align: left; /* Aligns text for a cleaner look */
+    text-align: left; /* Aligns text for better mobile reading */
+    margin: 12px 0;
+}
+
+/* --- RESPONSIVE WEB DESIGN (RWD) SECTION --- */
+
+/* For Tablets and Mobile Phones */
+@media screen and (max-width: 768px) {
+    .profile-card {
+        width: 90%; /* Card grows to fill small screens */
+        padding: 10px;
+    }
+    
+    .logo {
+        width: 80px; /* Logo shrinks on smaller screens */
+    }
+
+    .profile-details p {
+        font-size: 16px; /* Adjust font size for mobile readability */
+    }
 }
