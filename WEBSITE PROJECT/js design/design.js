@@ -1,19 +1,18 @@
 const app = Vue.createApp({});
 
-// Gallery Component
 app.component('gallery-component', {
     data() {
         return {
             images: [
-                { id: 1, src: 'https://via.placeholder.com/400x300', alt: 'Project One' },
-                { id: 2, src: 'https://via.placeholder.com/400x300', alt: 'Project Two' },
-                { id: 3, src: 'https://via.placeholder.com/400x300', alt: 'Project Three' },
-                { id: 4, src: 'https://via.placeholder.com/400x300', alt: 'Project Four' },
-                { id: 5, src: 'https://via.placeholder.com/400x300', alt: 'Project Five' },
-                { id: 6, src: 'https://via.placeholder.com/400x300', alt: 'Project Six' },
-                { id: 7, src: 'https://via.placeholder.com/400x300', alt: 'Project Seven' },
-                { id: 8, src: 'https://via.placeholder.com/400x300', alt: 'Project Eight' },
-                { id: 9, src: 'https://via.placeholder.com/400x300', alt: 'Project Nine' }
+                { id: 1, src: 'https://via.placeholder.com/400x300', alt: 'Project 1' },
+                { id: 2, src: 'https://via.placeholder.com/400x300', alt: 'Project 2' },
+                { id: 3, src: 'https://via.placeholder.com/400x300', alt: 'Project 3' },
+                { id: 4, src: 'https://via.placeholder.com/400x300', alt: 'Project 4' },
+                { id: 5, src: 'https://via.placeholder.com/400x300', alt: 'Project 5' },
+                { id: 6, src: 'https://via.placeholder.com/400x300', alt: 'Project 6' },
+                { id: 7, src: 'https://via.placeholder.com/400x300', alt: 'Project 7' },
+                { id: 8, src: 'https://via.placeholder.com/400x300', alt: 'Project 8' },
+                { id: 9, src: 'https://via.placeholder.com/400x300', alt: 'Project 9' }
             ]
         }
     },
@@ -27,7 +26,6 @@ app.component('gallery-component', {
     `
 });
 
-// Feedback Component
 app.component('feedback-form', {
     data() {
         return {

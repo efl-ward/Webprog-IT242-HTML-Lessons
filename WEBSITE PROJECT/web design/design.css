@@ -1,129 +1,50 @@
 /* --- YOUR SPECIFIC REQUESTED FIXES --- */
 .navbar ul {
-    margin-bottom: 0; /* Removes Bootstrap's default margin on lists */
+    margin-bottom: 0; 
     padding-left: 0;
 }
-
 .hero {
-    height: auto; /* Sets height based on content rather than screen size */
+    height: auto; 
     padding: 60px 10%;
 }
 
 /* --- GENERAL RESET & BASE STYLES --- */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
 
-body { 
-    background-color: #f4f7f6; 
-    color: #333; 
-    line-height: 1.6; 
-}
-
-/* --- NAVIGATION --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #2c3e50; /* Dark blue/grey consistent color scheme */
+    background: #2c3e50;
     color: white;
     padding: 1rem 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
+.navbar ul { display: flex; list-style: none; }
+.navbar ul li { margin-left: 20px; }
+.navbar ul li a { color: white; text-decoration: none; font-weight: bold; }
+.navbar ul li a:hover { color: #27ae60; }
 
-.navbar ul { 
-    display: flex; 
-    list-style: none; 
-}
+section { padding: 60px 10%; text-align: center; }
 
-.navbar ul li { 
-    margin-left: 20px; 
-}
-
-.navbar ul li a { 
-    color: white; 
-    text-decoration: none; 
-    font-weight: bold; 
-    transition: color 0.3s;
-}
-
-.navbar ul li a:hover {
-    color: #27ae60; /* Green highlight on hover */
-}
-
-/* --- SECTION PADDING --- */
-section { 
-    padding: 60px 10%; 
-    text-align: center; 
-}
-
-/* --- WORK GALLERY GRID (MOBILE RESPONSIVE) --- */
 .gallery-grid {
     display: grid;
     gap: 20px;
-    /* This creates the columns automatically based on screen size */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin-top: 20px;
 }
-
-
-
 .gallery-grid img { 
     width: 100%; 
     height: 250px; 
-    object-fit: cover; /* Ensures images aren't stretched */
+    object-fit: cover; 
     border-radius: 8px; 
-    transition: transform 0.3s; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.gallery-grid img:hover { 
-    transform: scale(1.05); /* Slight zoom for originality/polish */
-}
-
-/* --- FEEDBACK FORM STYLING --- */
-form { 
-    max-width: 500px; 
-    margin: 0 auto; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
-}
-
-input, textarea { 
-    padding: 12px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    width: 100%;
-}
-
-button { 
-    padding: 12px; 
-    background: #27ae60; 
-    color: white; 
-    border: none; 
-    cursor: pointer; 
-    border-radius: 5px; 
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: #219150;
-}
-
-/* --- FEEDBACK POSTS --- */
-.post { 
-    background: white; 
-    padding: 15px; 
-    margin-top: 15px; 
-    border-radius: 5px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    text-align: left;
-    border-left: 5px solid #27ae60;
-}
+form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+input, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 5px; }
+button { padding: 12px; background: #27ae60; color: white; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
+.post { background: white; padding: 15px; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; border-left: 5px solid #27ae60; }
