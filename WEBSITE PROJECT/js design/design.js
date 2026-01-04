@@ -45,7 +45,7 @@ app.component('guestbook-form', {
     },
     template: `
         <div>
-            <h2>Guestbook / Feedback</h2>
+            <h2>Feedback for my Project</h2>
             <form @submit.prevent="addComment">
                 <input v-model="userName" placeholder="Your Name" required>
                 <textarea v-model="userComment" placeholder="Leave a comment..." rows="4" required></textarea>
