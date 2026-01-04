@@ -21,8 +21,8 @@ app.component('gallery-component', {
     `
 });
 
-// Guestbook / Feedback Component
-app.component('guestbook-form', {
+// Feedback Component
+app.component('feedback-form', {
     data() {
         return {
             userName: '',
@@ -45,10 +45,9 @@ app.component('guestbook-form', {
     },
     template: `
         <div>
-            <h2>Feedback for my Project</h2>
-            <form @submit.prevent="addComment">
+            <h2>Feedback to my Project</h2> <form @submit.prevent="addComment">
                 <input v-model="userName" placeholder="Your Name" required>
-                <textarea v-model="userComment" placeholder="Leave a comment..." rows="4" required></textarea>
+                <textarea v-model="userComment" placeholder="Leave your feedback here..." rows="4" required></textarea>
                 <button type="submit">Submit Feedback</button>
             </form>
             <div class="comments-list mt-3">
