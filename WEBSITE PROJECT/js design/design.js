@@ -7,7 +7,13 @@ app.component('gallery-component', {
             images: [
                 { id: 1, src: 'https://via.placeholder.com/400x300', alt: 'Project One' },
                 { id: 2, src: 'https://via.placeholder.com/400x300', alt: 'Project Two' },
-                { id: 3, src: 'https://via.placeholder.com/400x300', alt: 'Project Three' }
+                { id: 3, src: 'https://via.placeholder.com/400x300', alt: 'Project Three' },
+                { id: 4, src: 'https://via.placeholder.com/400x300', alt: 'Project Four' },
+                { id: 5, src: 'https://via.placeholder.com/400x300', alt: 'Project Five' },
+                { id: 6, src: 'https://via.placeholder.com/400x300', alt: 'Project Six' },
+                { id: 7, src: 'https://via.placeholder.com/400x300', alt: 'Project Seven' },
+                { id: 8, src: 'https://via.placeholder.com/400x300', alt: 'Project Eight' },
+                { id: 9, src: 'https://via.placeholder.com/400x300', alt: 'Project Nine' }
             ]
         }
     },
@@ -45,7 +51,8 @@ app.component('feedback-form', {
     },
     template: `
         <div>
-            <h2>Feedback to my Project</h2> <form @submit.prevent="addComment">
+            <h2>Feedback to my Project</h2> 
+            <form @submit.prevent="addComment">
                 <input v-model="userName" placeholder="Your Name" required>
                 <textarea v-model="userComment" placeholder="Leave your feedback here..." rows="4" required></textarea>
                 <button type="submit">Submit Feedback</button>
