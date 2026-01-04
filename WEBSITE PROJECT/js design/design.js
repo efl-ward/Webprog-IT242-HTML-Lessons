@@ -5,9 +5,9 @@ app.component('gallery-component', {
     data() {
         return {
             images: [
-                { id: 1, src: 'https://via.placeholder.com/300', alt: 'Project One' },
-                { id: 2, src: 'https://via.placeholder.com/300', alt: 'Project Two' },
-                { id: 3, src: 'https://via.placeholder.com/300', alt: 'Project Three' }
+                { id: 1, src: 'https://via.placeholder.com/400x300', alt: 'Project One' },
+                { id: 2, src: 'https://via.placeholder.com/400x300', alt: 'Project Two' },
+                { id: 3, src: 'https://via.placeholder.com/400x300', alt: 'Project Three' }
             ]
         }
     },
@@ -21,7 +21,7 @@ app.component('gallery-component', {
     `
 });
 
-// Guestbook / Comment Form Component
+// Guestbook / Feedback Component
 app.component('guestbook-form', {
     data() {
         return {
@@ -51,7 +51,7 @@ app.component('guestbook-form', {
                 <textarea v-model="userComment" placeholder="Leave a comment..." rows="4" required></textarea>
                 <button type="submit">Submit Feedback</button>
             </form>
-            <div class="comments-list">
+            <div class="comments-list mt-3">
                 <div v-for="c in comments" class="post">
                     <strong>{{ c.name }}</strong> <small>({{ c.date }})</small>
                     <p>{{ c.text }}</p>
