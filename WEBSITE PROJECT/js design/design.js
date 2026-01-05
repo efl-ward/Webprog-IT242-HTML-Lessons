@@ -1,64 +1,24 @@
-const app = Vue.createApp({});
+// 1. Dynamic Greeting based on time
+const greetingElement = document.getElementById('greeting');
+const hour = new Date().getHours();
+let welcomeMessage = "";
 
-// Gallery Component
-app.component('gallery-component', {
-    data() {
-        return {
-            images: [
-                { id: 1, src: 'https://via.placeholder.com/300', alt: 'Project One' },
-                { id: 2, src: 'https://via.placeholder.com/300', alt: 'Project Two' },
-                { id: 3, src: 'https://via.placeholder.com/300', alt: 'Project Three' }
-            ]
-        }
-    },
-    template: `
-        <div>
-            <h2>My Work Gallery</h2>
-            <div class="gallery-grid">
-                <img v-for="img in images" :key="img.id" :src="img.src" :alt="img.alt">
-            </div>
-        </div>
-    `
+if (hour < 12) welcomeMessage = "Good Morning! I'm Mark Ani";
+else if (hour < 18) welcomeMessage = "Good Afternoon! I'm Mark Ani";
+else welcomeMessage = "Good Evening! I'm Mark Ani";
+
+greetingElement.innerText = welcomeMessage + " • IT Student @ APC";
+
+// 2. Simple Skill Highlighter
+const badges = document.querySelectorAll('.skill-badge');
+
+badges.forEach(badge => {
+    badge.addEventListener('mouseover', () => {
+        badge.style.transform = "scale(1.15)";
+        badge.style.transition = "0.2s";
+    });
+    
+    badge.addEventListener('mouseout', () => {
+        badge.style.transform = "scale(1)";
+    });
 });
-
-// Guestbook / Comment Form Component
-app.component('guestbook-form', {
-    data() {
-        return {
-            userName: '',
-            userComment: '',
-            comments: []
-        }
-    },
-    methods: {
-        addComment() {
-            if (this.userName && this.userComment) {
-                this.comments.push({
-                    name: this.userName,
-                    text: this.userComment,
-                    date: new Date().toLocaleString()
-                });
-                this.userName = '';
-                this.userComment = '';
-            }
-        }
-    },
-    template: `
-        <div>
-            <h2>Guestbook / Feedback</h2>
-            <form @submit.prevent="addComment">
-                <input v-model="userName" placeholder="Your Name" required>
-                <textarea v-model="userComment" placeholder="Leave a comment..." rows="4" required></textarea>
-                <button type="submit">Submit Feedback</button>
-            </form>
-            <div class="comments-list">
-                <div v-for="c in comments" class="post">
-                    <strong>{{ c.name }}</strong> <small>({{ c.date }})</small>
-                    <p>{{ c.text }}</p>
-                </div>
-            </div>
-        </div>
-    `
-});
-
-app.mount('#app');
