@@ -1,24 +1,21 @@
-// 1. Dynamic Greeting based on time
-const greetingElement = document.getElementById('greeting');
-const hour = new Date().getHours();
-let welcomeMessage = "";
-
-if (hour < 12) welcomeMessage = "Good Morning! I'm Mark Ani";
-else if (hour < 18) welcomeMessage = "Good Afternoon! I'm Mark Ani";
-else welcomeMessage = "Good Evening! I'm Mark Ani";
-
-greetingElement.innerText = welcomeMessage + " • IT Student @ APC";
-
-// 2. Simple Skill Highlighter
-const badges = document.querySelectorAll('.skill-badge');
-
-badges.forEach(badge => {
-    badge.addEventListener('mouseover', () => {
-        badge.style.transform = "scale(1.15)";
-        badge.style.transition = "0.2s";
-    });
+// Change greeting based on time of day
+document.addEventListener('DOMContentLoaded', () => {
+    const greeting = document.getElementById('greeting');
+    const hour = new Date().getHours();
     
-    badge.addEventListener('mouseout', () => {
-        badge.style.transform = "scale(1)";
+    let message = "Welcome to my profile!";
+    if (hour < 12) message = "Good Morning! I'm Mark Ani";
+    else if (hour < 18) message = "Good Afternoon! I'm Mark Ani";
+    else message = "Good Evening! I'm Mark Ani";
+    
+    greeting.innerText = message + " • IT Student @ APC";
+
+    // Small interaction for skills
+    const badges = document.querySelectorAll('.skill-badge');
+    badges.forEach(badge => {
+        badge.onmouseover = () => badge.style.backgroundColor = "#0d6efd";
+        badge.onmouseover = () => badge.style.color = "white";
+        badge.onmouseout = () => badge.style.backgroundColor = "#e7f1ff";
+        badge.onmouseout = () => badge.style.color = "#0d6efd";
     });
 });
