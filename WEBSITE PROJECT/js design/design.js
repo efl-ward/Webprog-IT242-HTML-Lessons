@@ -1,21 +1,16 @@
-// Change greeting based on time of day
-document.addEventListener('DOMContentLoaded', () => {
-    const greeting = document.getElementById('greeting');
+// script.js — simple JS for 70% success
+document.addEventListener("DOMContentLoaded", function () {
+    const greeting = document.getElementById("greeting");
     const hour = new Date().getHours();
-    
-    let message = "Welcome to my profile!";
-    if (hour < 12) message = "Good Morning! I'm Eduard Serna!";
-    else if (hour < 18) message = "Good Afternoon! I'm Eduard Serna!";
-    else message = "Good Evening! I'm Eduard Serna!";
-    
-    greeting.innerText = message + " • IT Student @ APC";
 
-    // Small interaction for skills
-    const badges = document.querySelectorAll('.skill-badge');
-    badges.forEach(badge => {
-        badge.onmouseover = () => badge.style.backgroundColor = "#0d6efd";
-        badge.onmouseover = () => badge.style.color = "white";
-        badge.onmouseout = () => badge.style.backgroundColor = "#e7f1ff";
-        badge.onmouseout = () => badge.style.color = "#0d6efd";
-    });
+    if (hour < 12) {
+        greeting.textContent = "Good Morning! I'm Eduard Serna";
+    } else if (hour < 18) {
+        greeting.textContent = "Good Afternoon! I'm Eduard Serna";
+    } else {
+        greeting.textContent = "Good Evening! I'm Eduard Serna";
+    }
+
+    // Optional: simple console message to show JS works
+    console.log("JavaScript loaded: Greeting updated based on time of day.");
 });
