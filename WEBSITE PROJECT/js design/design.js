@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const hour = new Date().getHours();
     
     let message = "Welcome to my profile!";
-    if (hour < 12) message = "Good Morning! I'm Mark Ani";
-    else if (hour < 18) message = "Good Afternoon! I'm Mark Ani";
-    else message = "Good Evening! I'm Mark Ani";
+    if (hour < 12) message = "Good Morning! I'm Eduard Serna!";
+    else if (hour < 18) message = "Good Afternoon! I'm Eduard Serna!";
+    else message = "Good Evening! I'm Eduard Serna!";
     
     greeting.innerText = message + " • IT Student @ APC";
 
