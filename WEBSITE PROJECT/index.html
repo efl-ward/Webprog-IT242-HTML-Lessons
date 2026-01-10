@@ -36,7 +36,9 @@
                     <h3 class="section-title"><i class="fa-solid fa-id-card"></i> About</h3>
                     <p>{{ profile.bio }}</p>
                     <ul class="custom-list">
-                        <li v-for="(val, key) in profile.details"><strong>{{ key }}:</strong> {{ val }}</li>
+                        <li v-for="(val, key) in profile.details">
+                            <strong>{{ key }}:</strong> {{ val }}
+                        </li>
                     </ul>
                 </section>
             </div>
@@ -50,7 +52,10 @@
                     <table class="table table-borderless text-white">
                         <thead><tr><th>Level</th><th>Institution</th></tr></thead>
                         <tbody>
-                            <tr v-for="edu in education"><td>{{ edu.level }}</td><td>{{ edu.name }}</td></tr>
+                            <tr v-for="edu in education">
+                                <td>{{ edu.level }}</td>
+                                <td>{{ edu.name }}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </section>
