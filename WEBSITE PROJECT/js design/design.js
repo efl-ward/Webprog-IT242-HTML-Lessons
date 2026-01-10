@@ -111,12 +111,13 @@ const app = createApp({
             greetingText: "",
             profile: {
                 name: "Eduard Florene Serna",
-                shortName: "EFL.SRN",
+                nickname: "Ward",
                 bio: "IT Student at Asia Pacific College. Aspiring to be successful and wealthy.",
                 details: {
                     "Major": "Information Technology",
                     "Hobby": "Motorcycle Riding",
                     "Sport": "Badminton"
+                    "Music": "RNB, INDIE POP"
                 }
             },
             skills: ["UI/UX", "Java", "Python", "MySQL", "Vue.js", "Bootstrap 5"],
@@ -134,7 +135,7 @@ const app = createApp({
         runTypewriter() {
             const hour = new Date().getHours();
             let msg = hour < 12 ? "Good Morning!" : hour < 18 ? "Good Afternoon!" : "Good Evening!";
-            const fullMsg = `${msg} Welcome to the portfolio of Eduard Serna.`;
+            const fullMsg = `${msg} Welcome to my Portfolio!!.`;
             
             let i = 0;
             const timer = setInterval(() => {
