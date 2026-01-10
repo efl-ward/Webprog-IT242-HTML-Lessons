@@ -1,17 +1,16 @@
 const { createApp } = Vue;
 
-// COMPONENT: Gallery
 const PictureGallery = {
     template: `
         <div class="row g-3">
             <div v-for="(img, i) in images" :key="i" class="col-6 col-md-3">
                 <div class="gallery-wrapper" @click="selectedImg = img">
-                    <img :src="img.url" class="img-fluid rounded shadow-sm gallery-thumb">
+                    <img :src="img.url" class="img-fluid rounded shadow-sm gallery-thumb" style="height: 200px; object-fit: cover; width: 100%;">
                     <div class="gallery-overlay"><span>View</span></div>
                 </div>
             </div>
             <div v-if="selectedImg" class="lightbox" @click="selectedImg = null">
-                <img :src="selectedImg.url" class="animate-pop">
+                <img :src="selectedImg.url" class="animate-pop img-fluid">
             </div>
         </div>
     `,
@@ -28,19 +27,18 @@ const PictureGallery = {
     }
 };
 
-// COMPONENT: Guestbook
 const GuestbookForm = {
     template: `
         <div class="guestbook-container mx-auto" style="max-width: 600px;">
-            <form @submit.prevent="save" class="glass-input p-4 mb-4">
-                <input v-model="name" class="form-control mb-2" placeholder="Your Name" required>
-                <textarea v-model="msg" class="form-control mb-2" placeholder="Message" required></textarea>
+            <form @submit.prevent="save" class="p-4 mb-4 glass-card">
+                <input v-model="name" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Your Name" required>
+                <textarea v-model="msg" class="form-control mb-2 bg-dark text-white border-secondary" placeholder="Message" required></textarea>
                 <button class="btn btn-info w-100 fw-bold text-white shadow">Sign Guestbook</button>
             </form>
             <div class="comments-scroll">
-                <div v-for="post in posts" class="comment-card p-3 mb-2 animate-pop border-bottom border-secondary">
-                    <strong>{{ post.user }}</strong>
-                    <p class="mb-1 small">{{ post.text }}</p>
+                <div v-for="post in posts" :key="post.time" class="p-3 mb-2 animate-pop border-bottom border-secondary">
+                    <strong class="text-info">{{ post.user }}</strong>
+                    <p class="mb-1 small text-light">{{ post.text }}</p>
                     <small class="text-muted">{{ post.time }}</small>
                 </div>
             </div>
@@ -65,7 +63,7 @@ const GuestbookForm = {
 const app = createApp({
     data() {
         return {
-            greetingMessage: "", // MUST MATCH HTML
+            greetingMessage: "", 
             profile: {
                 name: "Eduard Florene Serna",
                 nickname: "Ward",
@@ -79,17 +77,22 @@ const app = createApp({
             ]
         }
     },
-    mounted() { this.runTypewriter(); },
+    mounted() { 
+        this.runTypewriter(); 
+    },
     methods: {
         runTypewriter() {
             const hour = new Date().getHours();
-            let msg = hour < 12 ? "Good Morning!" : hour < 18 ? "Good Afternoon!" : "Good Evening!";
-            const fullMsg = `${msg} Welcome to my Portfolio!!`;
+            let msgPrefix = hour < 12 ? "Good Morning!" : hour < 18 ? "Good Afternoon!" : "Good Evening!";
+            const fullMsg = `${msgPrefix} Welcome to my Portfolio!!`;
             let i = 0;
             const timer = setInterval(() => {
-                this.greetingMessage += fullMsg[i];
-                i++;
-                if (i >= fullMsg.length) clearInterval(timer);
+                if (i < fullMsg.length) {
+                    this.greetingMessage += fullMsg[i];
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
             }, 60);
         }
     }

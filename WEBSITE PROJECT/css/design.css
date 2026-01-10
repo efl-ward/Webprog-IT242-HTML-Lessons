@@ -4,6 +4,7 @@ body {
     color: #e0e0e0;
     font-family: 'Segoe UI', sans-serif;
     min-height: 100vh;
+    margin: 0;
 }
 
 /* Glassmorphism Logic */
@@ -15,7 +16,17 @@ body {
 }
 
 /* Typography Harmony */
-h1, h3 { color: #00d2ff; text-transform: uppercase; letter-spacing: 2px; }
+h1, h3 { 
+    color: #00d2ff; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(0, 210, 255, 0.3);
+    display: inline-block;
+}
 
 /* Responsive Gallery Wrapper */
 .gallery-wrapper {
@@ -23,13 +34,21 @@ h1, h3 { color: #00d2ff; text-transform: uppercase; letter-spacing: 2px; }
     overflow: hidden;
     cursor: pointer;
     border-radius: 10px;
+    height: 200px; /* Standardizing height */
 }
-.gallery-thumb { transition: 0.5s ease; }
+.gallery-thumb { 
+    transition: 0.5s ease; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .gallery-overlay {
     position: absolute; top:0; left:0; width:100%; height:100%;
     background: rgba(0, 210, 255, 0.4);
     opacity: 0; display:flex; align-items:center; justify-content:center;
     transition: 0.3s;
+    color: white;
+    font-weight: bold;
 }
 .gallery-wrapper:hover .gallery-overlay { opacity: 1; }
 .gallery-wrapper:hover .gallery-thumb { transform: scale(1.1); }
@@ -39,6 +58,8 @@ h1, h3 { color: #00d2ff; text-transform: uppercase; letter-spacing: 2px; }
     background: #00d2ff; color: #000;
     box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
     margin: 3px;
+    padding: 8px 12px;
+    border: none;
 }
 
 /* Animations */
@@ -51,4 +72,8 @@ h1, h3 { color: #00d2ff; text-transform: uppercase; letter-spacing: 2px; }
     background: rgba(0,0,0,0.9); z-index:2000;
     display:flex; align-items:center; justify-content:center;
 }
-.lightbox img { max-width: 90%; border: 3px solid #00d2ff; }
+.lightbox img { 
+    max-width: 90%; 
+    max-height: 80%;
+    border: 3px solid #00d2ff; 
+}
