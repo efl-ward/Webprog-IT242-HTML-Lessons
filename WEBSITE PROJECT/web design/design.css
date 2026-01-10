@@ -1,22 +1,54 @@
-/* style.css — optional minimal tweaks */
-
+/* Color Palette: Dark Professional Blue #0f2027 -> #2c5364 */
 body {
-    font-family: Arial, sans-serif; 
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+    color: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
 }
 
-h3 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+/* Glassmorphism Logic */
+.glass-card, .glass-panel, .glass-nav {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
 }
 
-p, li {
-    line-height: 1.5;
+/* Typography Harmony */
+h1, h3 { color: #00d2ff; text-transform: uppercase; letter-spacing: 2px; }
+
+/* Responsive Gallery Wrapper */
+.gallery-wrapper {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.gallery-thumb { transition: 0.5s ease; }
+.gallery-overlay {
+    position: absolute; top:0; left:0; width:100%; height:100%;
+    background: rgba(0, 210, 255, 0.4);
+    opacity: 0; display:flex; align-items:center; justify-content:center;
+    transition: 0.3s;
+}
+.gallery-wrapper:hover .gallery-overlay { opacity: 1; }
+.gallery-wrapper:hover .gallery-thumb { transform: scale(1.1); }
+
+/* Custom Badge Glow */
+.glow-badge {
+    background: #00d2ff; color: #000;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+    margin: 3px;
 }
 
-.container-fluid.bg-primary {
-    background-color: #0d6efd; 
-}
+/* Animations */
+.animate-pop { animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+@keyframes pop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-a.btn-secondary {
-    text-decoration: none;
+/* Lightbox overlay */
+.lightbox {
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.9); z-index:2000;
+    display:flex; align-items:center; justify-content:center;
 }
+.lightbox img { max-width: 90%; border: 3px solid #00d2ff; }

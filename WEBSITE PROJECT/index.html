@@ -1,103 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ward's WEBSITE | Portfolio</title>
+    <title>Portfolio | Eduard Serna</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap 5 -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="web design/design.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
 
-<!-- Header -->
-<div class="container-fluid p-5 bg-primary text-white text-center">
-    <h1>😎🥱😴🤑</h1>
-    <p id="greeting">Welcome to my profile!</p>
-</div>
-
-<!-- Main Content -->
-<div class="container mt-5">
-    <div class="row">
-
-        <!-- Left Column -->
-        <div class="col-sm-4">
-            <h3>About Me</h3>
-            <p>IT Student at Asia Pacific College. Aspiring to be rich.</p>
-
-            <ul>
-                <li>Sports: Badminton</li>
-                <li>Gaming: Online Games</li>
-                <li>Travel: Motorcycle Riding</li>
-            </ul>
+<div id="app">
+    <nav class="navbar navbar-expand-lg navbar-dark glass-nav sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">{{ profile.shortName }}</a>
+            <div class="ms-auto">
+                <a href="resources/resources.html" class="nav-link btn btn-outline-info btn-sm px-3">Documentation</a>
+            </div>
         </div>
+    </nav>
 
-        <!-- Right Column -->
-        <div class="col-sm-8">
-            <h3>Technical Experience</h3>
-            <ul>
-                <li>UI/UX Design</li>
-                <li>Java</li>
-                <li>Python</li>
-                <li>MySQL Workbench</li>
-            </ul>
+    <header class="container-fluid py-5 text-center text-white">
+        <div class="glass-panel p-5 animate-fade-in">
+            <h1 class="display-3 fw-bold">{{ profile.name }}</h1>
+            <p class="lead typewriter">{{ greetingMessage }}<span class="cursor">_</span></p>
+        </div>
+    </header>
 
-            <h3>Educational Background</h3>
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Level</th>
-                            <th>Institution</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>College</td>
-                            <td>Asia Pacific College (IT)</td>
-                        </tr>
-                        <tr>
-                            <td>Senior High</td>
-                            <td>Learn & Explore Montessori School</td>
-                        </tr>
-                        <tr>
-                            <td>Junior High</td>
-                            <td>Signal Village National High School</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <main class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <section class="glass-card h-100 fade-in-left">
+                    <h3 class="section-title"><i class="fa-solid fa-id-card"></i> About</h3>
+                    <p>{{ profile.bio }}</p>
+                    <ul class="custom-list">
+                        <li v-for="(val, key) in profile.details"><strong>{{ key }}:</strong> {{ val }}</li>
+                    </ul>
+                </section>
             </div>
 
-            <h3>Ultimate Dream</h3>
-            <p><em>"To become successful and wealthy in life."</em></p>
-
-            <a href="resources/resources.html" class="btn btn-secondary mt-3">Resources</a>
+            <div class="col-lg-8">
+                <section class="glass-card h-100 fade-in-right">
+                    <h3 class="section-title"><i class="fa-solid fa-microchip"></i> Expertise</h3>
+                    <div class="mb-4">
+                        <span v-for="skill in skills" class="badge glow-badge">{{ skill }}</span>
+                    </div>
+                    <table class="table table-borderless text-white">
+                        <thead><tr><th>Level</th><th>Institution</th></tr></thead>
+                        <tbody>
+                            <tr v-for="edu in education"><td>{{ edu.level }}</td><td>{{ edu.name }}</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
         </div>
 
-    </div>
+        <section class="mt-5 fade-in-up">
+            <h3 class="section-title text-center"><i class="fa-solid fa-images"></i> Visual Portfolio</h3>
+            <picture-gallery></picture-gallery>
+        </section>
+
+        <section class="mt-5 mb-5 fade-in-up">
+            <h3 class="section-title text-center"><i class="fa-solid fa-comments"></i> Community Guestbook</h3>
+            <guestbook-form></guestbook-form>
+        </section>
+    </main>
+
+    <footer class="footer-glass py-4 text-center text-white-50">
+        <p>&copy; 2026 {{ profile.name }} | Built with Vue.js & Bootstrap 5</p>
+    </footer>
 </div>
 
-<!-- Footer -->
-<div class="container-fluid p-3 text-center text-muted mt-5">
-    <p>&copy; EFL.SRN | WEBPROG IT242</p>
-</div>
-
-<!-- Simple JS DOM greeting -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const greeting = document.getElementById("greeting");
-    const hour = new Date().getHours();
-
-    if (hour < 12) {
-        greeting.textContent = "Good Morning! I'm Eduard Serna";
-    } else if (hour < 18) {
-        greeting.textContent = "Good Afternoon! I'm Eduard Serna";
-    } else {
-        greeting.textContent = "Good Evening! I'm Eduard Serna";
-    }
-});
-
-</script>
+<script src="js design/design.js"></script>
 </body>
 </html>
