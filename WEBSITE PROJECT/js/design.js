@@ -1,7 +1,7 @@
 /**
  * WEBPROG IT242 - Midterm Project
  * Developer: Eduard Florene Serna
- */
+*/
 
 const { createApp } = Vue;
 
@@ -28,6 +28,7 @@ const PictureGallery = {
             </transition>
         </div>
     `,
+
     data() {
         return {
             selectedImg: null,
@@ -45,6 +46,7 @@ const PictureGallery = {
         }
     }
 };
+
 
 // --- COMPONENT 2: GUESTBOOK (Advanced Persistence) ---
 const GuestbookForm = {
@@ -76,6 +78,8 @@ const GuestbookForm = {
             </div>
         </div>
     `,
+
+
     data() {
         return {
             form: { name: '', message: '' },
@@ -83,6 +87,7 @@ const GuestbookForm = {
             entries: JSON.parse(localStorage.getItem('myGuestbook') || '[]')
         }
     },
+
     methods: {
         submitEntry() {
             const newEntry = {
@@ -102,6 +107,7 @@ const GuestbookForm = {
         }
     }
 };
+
 
 // --- MAIN APP INSTANCE ---
 const app = createApp({
