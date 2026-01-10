@@ -1,7 +1,6 @@
 /**
  * WEBPROG IT242 - Midterm Project
  * Developer: Eduard Florene Serna
- * Framework: Vue.js 3 
  */
 
 const { createApp } = Vue;
