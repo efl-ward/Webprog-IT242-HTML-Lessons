@@ -18,10 +18,10 @@ const PictureGallery = {
         return {
             selectedImg: null,
             images: [
-                { url: 'https://images.unsplash.com/photo-1511512578047-dfb367046420' },
-                { url: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4' },
-                { url: 'https://images.unsplash.com/photo-1524985069026-dd778a71c7b4' },
-                { url: 'https://luxlux.net/lux/wp-content/uploads/steph-curry-4-1-scaled.jpeg' }
+                { url: 'https://photos.fife.usercontent.google.com/pw/AP1GczPmK_uLH_s0Y6LjqaISdYnGMdnIOMQcFQebeqTW9XKdObzsDa8xNJgtLQ=s220-no?authuser=0' },
+                { url: 'https://photos.fife.usercontent.google.com/pw/AP1GczM_0dcTZsybVNmekX16YyQVAccjcbhgHzID-mHGNnbuZW7nSXR0TRB6MA=w719-h959-s-no-gm?authuser=0' },
+                { url: 'https://photos.fife.usercontent.google.com/pw/AP1GczM5CcuEgHJmetWC9Vffx_XI57rdEdq8nV0WznS03o0QSIJPoiCBusfBbQ=w719-h959-s-no-gm?authuser=0' },
+                { url: 'https://photos.fife.usercontent.google.com/pw/AP1GczMugOtaYwG50e_jEQB2wk5s_uLlXYbSHV7n8VM5yacxzmU8bitc0fq96w=w639-h959-s-no-gm?authuser=0' }
             ]
         }
     }
